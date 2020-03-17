@@ -6,11 +6,11 @@
         <lightning-layout>
             <lightning-layout-item padding="around-small">   
                 <template if:true={DroppedcaseNumber}>                
-                    <template for:each={DroppedcaseNumber} for:item="item">
+                    <template for:each={DroppedcaseNumber} for:item="item" for:index ='index'>
                         <!-- use draggable="true" to make div as draggable-->
-                        <div class="column" draggable="true" key={item.Id}
-                            data-item={item.Id} ondragstart={handleDragStart}>
-                            <div class="slds-text-heading_small">{item.Name}</div>
+                          <div class="column" draggable="true" key={item.Id}
+                            data-item={item.Id} data-index={index}  ondrop={handleDrop}  ondragover={allowDrop} ondragstart={handleDragStart}>
+                            <div class="slds-text-heading_small" style="border-style: ridge;">{item.Name}</div>
                         </div>
                     </template>
                 </template>

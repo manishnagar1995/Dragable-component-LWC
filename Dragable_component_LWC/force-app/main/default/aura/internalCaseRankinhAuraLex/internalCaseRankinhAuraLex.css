@@ -1,0 +1,30 @@
+.THIS .tables_ui {
+      display:inline-block;
+      margin:2px 2%;
+      border:2px solid #3333fe;
+      border-spacing:0;
+    }
+.THIS .tables_ui ul li {
+      min-width: 200px;
+    }
+.THIS .dragging li.ui-state-hover {
+      min-width: 240px;
+    }
+.THIS .dragging .ui-state-hover a {
+      color:green !important;
+      font-weight: bold;
+    }
+.THIS .tables_ui th,.THIS td {
+      text-align: right;
+      padding: 2px 4px;
+      border: 1px solid;
+    }
+.THIS .t_sortable tr,.THIS .ui-sortable-helper {
+      cursor: move;
+    }
+.THIS .t_sortable tr:first-child {
+      cursor: default;
+    }
+.THIS .ui-sortable-placeholder {
+      background: yellow;
+    }

@@ -1,0 +1,62 @@
+<aura:component description = "internalCaseRankingAuraLex" implements="force:appHostable,flexipage:availableForAllPageTypes"
+access="global" >
+<aura:attribute name="title" type="String" default="Custom Title"/>
+
+<lightning:card>
+    <aura:set attribute="title">
+        <lightning:icon iconName="utility:connected_apps" size="small"/>
+        {! v.title }
+    </aura:set>
+    <aura:set attribute="footer">
+    </aura:set>
+    <table class="tables_ui" id="t_draggable1"><caption><h4>Table 1</h4></caption>
+        <tbody class="t_sortable">
+          <tr>
+            <th>col_1</th>
+            <th>col_2</th>  
+            <th>col_3</th>  
+            <th>col_4</th>  
+          </tr>
+          <tr>
+            <td>156</td>                                                                                         
+            <td>2668</td>                                                              
+            <td>100.95</td>  
+            <td>1.82</td>                                                               
+          </tr>
+          <tr>
+            <td>256</td>                                                                                         
+            <td>618</td>                                                              
+            <td>10.35</td> 
+            <td>1.82</td>                                                             
+          </tr>
+          <tr>  
+            <td>789</td>                                                                                         
+            <td>28</td>                                                              
+            <td>105.8</td> 
+            <td>15.89</td>                                                             
+          </tr>
+        </tbody></table>
+        
+        <table class="tables_ui" id="t_draggable2"><caption><h4>Table 2</h4></caption>
+        <tbody class="t_sortable">
+           <tr>
+            <th>COL_1</th>
+            <th>COL_2</th>  
+            <th>COL_3</th>  
+            <th>COL_4</th>
+          </tr>
+          <tr> 
+            <td>36</td> 
+            <td>78</td>
+            <td>100.9</td>
+            <td>1.82</td>
+          </tr>
+          <tr>
+            <td>236</td> 
+            <td>668</td>
+            <td>10.95</td> 
+            <td>12.80</td>
+          </tr>
+        </tbody></table>
+</lightning:card>
+</aura:component>
