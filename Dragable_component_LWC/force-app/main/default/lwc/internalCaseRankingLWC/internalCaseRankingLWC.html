@@ -1,0 +1,99 @@
+<template>
+    <lightning-card>
+        <div style="padding-left:29%; font-size: 14px; width: auto;">    Select Account:&nbsp;&nbsp;
+            <select  name = "optionSelect" size="1">
+                <template  for:each={getaccounts} for:item="getaccount">
+                    <option key={getaccount.Id}  >{getaccount.Name}</option>
+                </template>
+            </select> 
+            </div>
+            <div>
+                <i> &nbsp;&nbsp;Click and drag to a Line of Business below to rank your cases</i>
+                <template  for:each={mapData} for:item="mapkey">
+                   {mapkey.key}
+                    <table class="tables_ui slds-table slds-table_cell-buffer slds-table_bordered" key={mapkey}>
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Case #">Case #</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Line of Business">Line of Business</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Subject">Subject</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Contact">Contact</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Case Owner">Case Owner</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Status">Status</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Priority">Priority</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Date Opened">Date Opened</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Rank">Rank</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template  for:each={mapkey.value} for:item="getCase" for:index="Indexvar">
+                
+                                <tr  class="slds-hint-parent"  
+                                     key={getCase.ID}  
+                                     draggable="true" 
+                                     data-item={getCase.Id} 
+                                     data-index={Indexvar} 
+                                     ondragstart={handleDragStart}>
+
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Account Name"><a href=\{/+getCase.Id} target="_blank">{getCase.CaseNumber}</a></div>
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Line of Business">{getCase.Line_of_Business__c}</div>
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Phone">{getCase.Subject}</div>
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Status">{getCase.ContactId}</div> 
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Rank_Case__c">{getCase.Owner.Name}</div> 
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Rank_Case__c">{getCase.Status}</div> 
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Rank_Case__c">{getCase.priority}</div> 
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Rank_Case__c">{getCase.CreatedDate}</div> 
+                                    </td>
+                                    <td data-label="">
+                                        <div class="slds-truncate" title="Rank_Case__c">{getCase.Ranking__c}</div> 
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+
+                <lightning-accordion>
+                    <lightning-accordion-section label="Cases with Unassigned Ranking">
+                           
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </div>
+            
+          
+    </lightning-card>
+    
+</template>

@@ -3,7 +3,6 @@ import { LightningElement, wire, track} from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import { fireEvent } from 'c/pubsub';
 import { registerListener, unregisterAllListeners } from 'c/pubsub';
-import getcase from '@salesforce/apex/AccountHelper.getAccountLocations';
 
 let i=0;
 let caseIds; //store id from the div
